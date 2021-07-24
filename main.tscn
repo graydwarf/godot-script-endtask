@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TaskNameLabel" type="Label" parent="."]
+margin_left = 27.0
+margin_top = 279.0
+margin_right = 101.0
+margin_bottom = 293.0
+text = "Task Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndTaskButton" type="Button" parent="."]
+margin_left = 311.0
+margin_top = 274.0
+margin_right = 418.0
+margin_bottom = 297.0
+text = "End Task"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskNameLineEdit" type="LineEdit" parent="."]
+margin_left = 103.0
+margin_top = 274.0
+margin_right = 306.0
+margin_bottom = 298.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 27.0
+margin_right = 648.0
+margin_bottom = 228.0
+text = "WARNING! Please review the code and make sure it's going to work as expected for your specific  environment. I make no promises in regards to the integrity and behavior of this code. Loss of data is possible if you end task to the wrong thing. Recommend stepping through all the code (including error handling) to make sure it's doing what you want.
+
+For demo purposes, specify a taskname and click the EndTask button to terminate ALL processes with that name. 
+
+A simple test scenario is to launch and terminate one or more notepad.exe processes. Make sure to save and close any that are already open first! Do specify the file extension in the Task Name field as well. Example: notepad.exe
+
+Some errors output to the debug console so check there if nothing happens."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="EndTaskButton" to="." method="_on_Button_pressed"]
